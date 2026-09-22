@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AZIZ VIP | المعرض الفاخر والوساطة المباشرة</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<style>
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: #0f172a;
+color: #f8fafc;
+}
+.gold-gradient {
+background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa771c 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.gold-btn {
+background: linear-gradient(135deg, #d4af37 0%, #aa771c 100%);
+color: #0f172a;
+}
+.gold-btn:hover {
+opacity: 0.9;
+}
+.card-border {
+border: 1px solid rgba(212, 175, 55, 0.25);
+}
+</style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+<!-- Header -->
+<header class="p-5 border-b border-slate-800 text-center bg-slate-900/50 backdrop-blur sticky top-0 z-50">
+<h1 class="text-3xl font-black gold-gradient tracking-wide">AZIZ VIP</h1>
+<p class="text-xs text-slate-400 mt-1">خدمات الوساطة الخاصة والتجارة الإلكترونية الفاخرة</p>
+</header>
+
+<!-- Hero Section -->
+<section class="p-6 text-center max-w-2xl mx-auto mt-2">
+<span class="bg-amber-500/10 text-amber-400 border border-amber-500/30 text-xs px-3 py-1 rounded-full uppercase tracking-widest font-semibold">
+راحة بال + ضمان كامل
+</span>
+<h2 class="text-2xl md:text-4xl font-bold mt-4 leading-tight">
+تسوّق، بيع، واطلب أي غرض <br><span class="gold-gradient">بدون تعب ولا وجع رأس</span>
+</h2>
+</section>
+
+<!-- Core Services Buttons -->
+<section class="p-4 max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-slate-900/80 p-5 rounded-2xl card-border text-center">
+<h3 class="text-lg font-bold text-slate-100">بدك تبيع غرضك؟</h3>
+<p class="text-slate-400 text-xs mt-1">نحن نتكفل بالتصوير والنشر والبيع بأعلى سعر.</p>
+<a href="https://wa.me/963930212364?text=مرحباً%20AZIZ%20VIP،%20عندي%20غرض%20بدي%20أعرضه%20للبيع"
+target="_blank" class="gold-btn font-bold py-2.5 px-4 rounded-xl mt-4 block text-xs">
+<i class="fa-brands fa-whatsapp ml-1"></i> اعرض غرضك الآن
+</a>
+</div>
+
+<div class="bg-slate-900/80 p-5 rounded-2xl card-border text-center">
+<h3 class="text-lg font-bold text-slate-100">عم تدور على شغلة؟</h3>
+<p class="text-slate-400 text-xs mt-1">ابعتلنا المواصفات والميزانية ونحن نؤمنها لك.</p>
+<a href="https://wa.me/963930212364?text=مرحباً%20AZIZ%20VIP،%20عم%20دور%20على%20غرض%20محدد"
+target="_blank" class="bg-slate-800 text-amber-400 border border-amber-500/30 font-bold py-2.5 px-4 rounded-xl mt-4 block text-xs">
+<i class="fa-brands fa-whatsapp ml-1"></i> اطلب قطعة خاصة
+</a>
+</div>
+</section>
+
+<!-- Product Showcase -->
+<section class="p-4 max-w-4xl mx-auto my-6 w-full">
+<div class="flex items-center justify-between mb-4 px-2">
+<h3 class="text-xl font-bold gold-gradient"><i class="fa-solid fa-store ml-2"></i>معرض AZIZ VIP</h3>
+<span class="text-xs text-slate-400">تحديث تلقائي</span>
+</div>
+
+<!-- Dynamic Items Container -->
+<div id="items-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+<div class="col-span-full text-center py-10 text-slate-400">
+<i class="fa-solid fa-spinner fa-spin text-amber-400 text-2xl mb-2"></i>
+<p class="text-xs">جاري تحميل المعرض...</p>
+</div>
+</div>
+</section>
+
+<!-- Footer Contact -->
+<div class="p-4 bg-slate-900 border-t border-slate-800 text-center">
+<a href="https://wa.me/963930212364" target="_blank" class="text-slate-300 text-xs hover:text-amber-400 transition">
+<i class="fa-brands fa-whatsapp text-emerald-500 text-base ml-1"></i> AZIZ VIP للتواصل المباشر: <span dir="ltr" class="font-mono">+963 930 212 364</span>
+</a>
+</div>
+
+<!-- Script Bypass CORS using Opensource API -->
+<script>
+const sheetId = '18XUtYAQeWi_dbnOdlv2vSxdJfzvqekpjoM_VkHAENa8';
+const targetUrl = https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json; const apiUrl =https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)};
+
+fetch(apiUrl)
+.then(response => {
+if (response.ok) return response.json();
+throw new Error('Network response error');
+})
+.then(data => {
+const rawText = data.contents;
+const json = JSON.parse(rawText.substring(47, rawText.length - 2));
+const rows = json.table.rows;
+const container = document.getElementById('items-container');
+container.innerHTML = '';
+
+if (!rows || rows.length === 0) {
+container.innerHTML = &lt;div class="col-span-full text-center py-10 bg-slate-900/50 rounded-2xl border border-slate-800"&gt; &lt;i class="fa-solid fa-box-open text-slate-500 text-3xl mb-2"&gt;&lt;/i&gt; &lt;p class="text-sm text-slate-300 font-semibold"&gt;المعرض يتم تحديثه حالياً&lt;/p&gt; &lt;p class="text-xs text-slate-500 mt-1"&gt;تواصل معنا عبر الواتساب للاستفسار عن أي بضاعة خاصة.&lt;/p&gt; &lt;/div>;
+return;
+}
+
+rows.forEach(row => {
+const c = row.c;
+if(!c) return;
+
+const name = (c[0] && c[0].v !== null) ? c[0].v : 'غرض مميز';
+const desc = (c[1] && c[1].v !== null) ? c[1].v : '';
+const price = (c[2] && c[2].v !== null) ? c[2].v : 'حسب الاتفاق';
+const imgUrl = (c[3] && c[3].v !== null) ? c[3].v : 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500';
+const status = (c[4] && c[4].v !== null) ? c[4].v : 'متوفر';
+
+const encodedMsg = encodeURIComponent(مرحباً AZIZ VIP، أنا مهتم بشراء: ${name}`);
+
+const itemHTML = &lt;div class="bg-slate-900 rounded-2xl overflow-hidden card-border flex flex-col justify-between"&gt; &lt;img src="${imgUrl}" alt="{status}</span>
+<h4 class="font-bold text-base mt-2 text-slate-100">{desc}</p>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
+<div>
+<span class="text-[10px] text-slate-500 block">السعر المطلوب</span>
+<span class="text-amber-400 font-bold text-sm">{encodedMsg}" target="_blank" class="gold-btn text-xs font-bold px-3 py-2 rounded-lg">
+حجز / استفسار
+</a>
+</div>
+</div>
+</div>; container.innerHTML += itemHTML; }); }) .catch(err =&gt; { console.error(err); document.getElementById('items-container').innerHTML =
+<div class="col-span-full text-center py-10 bg-slate-900/50 rounded-2xl border border-slate-800">
+<i class="fa-solid fa-box-open text-slate-500 text-3xl mb-2"></i>
+<p class="text-sm text-slate-300 font-semibold">لا توجد أغراض معروضة حالياً أو جاري التحديث</p>
+<p class="text-xs text-slate-500 mt-1">تواصل معنا عبر الواتساب للطلبات الخاصة.</p>
+</div>`;
+});
+</script>
+</body>
+</html>
